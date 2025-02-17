@@ -16,29 +16,27 @@ with st.expander('Data'):
   st.dataframe(y_raw)
 
 with st.sidebar:
-  st.header('Введите признаки: ')
-  island = st.selectbox('Island', ('Torgersen', 'Dream', 'Biscoe'))
+  st.header("Input same:")
+  island = st.selectbox('Island', ('Torgerson', 'Dream', 'Biscose'))
   bill_length_mm = st.slider('Bill length (mm)', 32.1, 59.6, 44.5)
   bill_depth_mm = st.slider('Bill depth (mm)', 13.1, 21.5, 17.3)
-  flipper_length_mm = st.slider ('Flipper length (mm)', 32.1, 59.6, 44.5)
+  flipper_length_mm = st.slider('Flipper length (mm)', 32.1, 59.6, 44.5)
   body_mass_g = st.slider('Body Mass (g)', 32.1, 59.6, 44.5)
   gender = st.selectbox('Gender', ('female', 'male'))
-
-  st.expander('Data Visualization')
-  fig = px.scatter(
+st.subheader('Data Visualization')
+fig = px.scatter(
     df,
-    x = 'bill_length_mm',
-    y = 'bill_depth_mm',
-    color = 'island',
-    title = 'Bill Length vs Bill Depth by Island'
-  )
-  st.plotly_chart(fig)
+    x='bill_length_mm',
+    y='bill_depth_mm',
+    color='island',
+    title='Bill Length vs. Bill Depth by Island'
+)
+st.plotly_chart(fig)
 
-  fig2 = px.histogram(
-    df,
-    x = 'body_mass_g',
-    nbins = 30,
-    title = 'Distribution of body mass'
-  )
-  st.plotly_chart(fig2)
-   
+fig2 = px.histogram(
+    df, 
+    x='body_mass_g', 
+    nbins=30, 
+    title='Distribution of Body Mass'
+)
+st.plotly_chart(fig2)
