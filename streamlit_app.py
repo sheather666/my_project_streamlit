@@ -37,7 +37,7 @@ with st.slidebar:
 
   fig2 = px.histogram(
     df,
-    x = 'body_mass_g'
+    x = 'body_mass_g',
     nbins = 30,
     title = 'Distribution of body mass'
   )
