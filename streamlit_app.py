@@ -8,7 +8,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/dataprofessor/data/master/pe
 
 with st.expamder('Data'):
   st.write()
-  X_raw = df.drop('Specoes', axis = 1)
+  X_raw = df.drop('species', axis = 1)
   st.dataFrame(X_raw)
 
   st.write('y')
