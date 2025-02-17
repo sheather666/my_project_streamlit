@@ -74,7 +74,7 @@ with st.expander('Data preparation'):
 from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 
-base_rf = RandomForrestClassifier(random_state = 42)
+base_rf = RandomForestClassifier(random_state = 42)
 base_rf.fit (X, y)
 prediction = base_rf.predict(input_row)
 prediction_proba = base_rf.predict_proba(input_row)
